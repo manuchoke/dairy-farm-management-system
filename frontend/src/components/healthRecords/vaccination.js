@@ -169,8 +169,8 @@ const VaccinationForm = ({ onClose, onRecordAdded, initialData }) => {
         <label>Next Due Date:</label>
         <input type="date" name="nextDueDate" value={formData.nextDueDate} onChange={handleChange} required />
       </div>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={onClose}>Cancel</button>
+      <button type="submit" className="submit-button">Submit</button>
+      <button type="button" className="cancel-button" onClick={onClose}>Cancel</button>
     </form>
   );
 };

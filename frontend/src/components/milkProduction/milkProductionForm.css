@@ -9,9 +9,12 @@
   z-index: 1000;
   border-radius: 15px;
   border: 1px solid #3b3b3b;
-  color: white;
+  color: rgb(37, 34, 34);
   width: 90%;
   max-width: 500px;
+}
+.form-label {
+  color: rgb(245, 236, 236);
 }
 
 .form-header {
@@ -22,6 +25,17 @@
   color: #e0e0e0;
   font-size: 1.5rem;
   font-weight: 600;
+}
+.pop-overlay {
+  background-color: rgb(253, 246, 246);
+  color: rgb(245, 236, 236);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #3b3b3b;
 }
 
 .milk-production-form {

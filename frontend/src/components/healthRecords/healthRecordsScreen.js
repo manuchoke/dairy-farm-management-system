@@ -12,6 +12,7 @@ const HealthRecordsScreen = () => {
   const [activeForm, setActiveForm] = useState(null); // Tracks which form is active
   const [editRowIndex, setEditRowIndex] = useState(null); // Tracks the row being edited
   const [editingRecord, setEditingRecord] = useState(null); // Holds temporary edited data
+  const [activeButton, setActiveButton] = useState(null); // Track active button
 
   // States for storing records of each form type
   const [labTestRecords, setLabTestRecords] = useState([]);
@@ -165,19 +166,34 @@ const HealthRecordsScreen = () => {
 
       {/* Buttons to open forms */}
       <div className="icon-buttons">
-        <button onClick={() => setActiveForm('labTest')} className="icon-button">
+        <button 
+          onClick={() => { setActiveForm('labTest'); setActiveButton('labTest'); }} 
+          className={`icon-button ${activeButton === 'labTest' ? 'active' : ''}`}
+        >
           Lab Test
         </button>
-        <button onClick={() => setActiveForm('medication')} className="icon-button">
+        <button 
+          onClick={() => { setActiveForm('medication'); setActiveButton('medication'); }} 
+          className={`icon-button ${activeButton === 'medication' ? 'active' : ''}`}
+        >
           Medication
         </button>
-        <button onClick={() => setActiveForm('reproductiveHealth')} className="icon-button">
+        <button 
+          onClick={() => { setActiveForm('reproductiveHealth'); setActiveButton('reproductiveHealth'); }} 
+          className={`icon-button ${activeButton === 'reproductiveHealth' ? 'active' : ''}`}
+        >
           Reproductive Health
         </button>
-        <button onClick={() => setActiveForm('vaccination')} className="icon-button">
+        <button 
+          onClick={() => { setActiveForm('vaccination'); setActiveButton('vaccination'); }} 
+          className={`icon-button ${activeButton === 'vaccination' ? 'active' : ''}`}
+        >
           Vaccination
         </button>
-        <button onClick={() => setActiveForm('healthCheck')} className="icon-button">
+        <button 
+          onClick={() => { setActiveForm('healthCheck'); setActiveButton('healthCheck'); }} 
+          className={`icon-button ${activeButton === 'healthCheck' ? 'active' : ''}`}
+        >
           Health Check
         </button>
       </div>
@@ -648,13 +664,13 @@ const HealthRecordsScreen = () => {
                           {editingRecord ? new Date().toLocaleString() : record.lastUpdated}
                         </td>
                         <td>
-                          <button onClick={() => saveEdits(activeForm, index)}>Save</button>
-                          <button onClick={() => {
-                            setEditRowIndex(null);
-                            setEditingRecord(null); // Reset on Cancel
-                          }}>
-                            Cancel
-                          </button>
+                          <div className="button-group">
+                            <button onClick={() => saveEdits(activeForm, index)} className="submit-button">Save</button>
+                            <button onClick={() => {
+                              setEditRowIndex(null);
+                              setEditingRecord(null); // Reset on Cancel
+                            }} className="cancel-button">Cancel</button>
+                          </div>
                         </td>
                       </>
                     ) : (
@@ -710,8 +726,10 @@ const HealthRecordsScreen = () => {
                         )}
                         <td>{record.lastUpdated}</td>
                         <td>
-                          <button onClick={() => startEditing(activeForm, index)}>Edit</button>
-                          <button onClick={() => deleteRecord(activeForm, index)}>Delete</button>
+                          <div className="button-group">
+                            <button onClick={() => startEditing(activeForm, index)} className="edit-button">Edit</button>
+                            <button onClick={() => deleteRecord(activeForm, index)} className="delete-button">Delete</button>
+                          </div>
                         </td>
                       </>
                     )}

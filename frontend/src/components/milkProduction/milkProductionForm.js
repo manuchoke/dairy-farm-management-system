@@ -123,7 +123,7 @@ const MilkProductionForm = ({ onSubmit, onClose, initialData, isEditing, animals
   };
 
   return (
-    <div className="milk-production-form-popup">
+    <div className="milk-production-form-popup" style={{ backgroundColor: 'rgb(70, 68, 68)'} }>
       <h2 className="text-xl font-bold mb-4">
         {isEditing ? 'Edit Milk Production Record' : 'Add Milk Production Record'}
       </h2>

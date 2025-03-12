@@ -87,7 +87,7 @@ const DairyChatAI = () => {
   return (
     <div className="chat-container">
       <div className="chat-header">
-        <h2>Dairy Farm AI Assistant</h2>
+        <h2 style={{ color: 'rgb(255, 255, 255)' }}>Dairy Farm AI Assistant</h2>
       </div>
       <div className="chat-messages">
         {messages.length === 0 && (

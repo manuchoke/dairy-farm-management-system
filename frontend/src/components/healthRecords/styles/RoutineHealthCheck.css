@@ -16,7 +16,7 @@
   .form-container label {
     display: block;
     margin-bottom: 5px;
-    color: #388e3c;
+    color: #070707;
     font-weight: bold;
   }
   
@@ -27,11 +27,11 @@
     border: 1px solid #c8e6c9;
     border-radius: 4px;
     background-color: #f1f8e9;
-    color: #2e7d32;
+    color: #050505;
   }
   
   .form-container button {
-    background-color: #66bb6a;
+    background-color: #2859c5;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -46,7 +46,7 @@
   }
   
   .form-container button:hover {
-    background-color: #81c784;
+    background-color: #81a7c7;
   }
   
   .form-container button[type="button"]:hover {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/DairyNewsReports.css';
 
 const DairyNewsReports = () => {
   const newsAndReports = {
@@ -114,9 +115,9 @@ const DairyNewsReports = () => {
               key={index}
               className="block"
             >
-              <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 bg-white">
+              <div className="card">
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-2">{item.description}</p>
+                <p className="text-gray-300 mb-2">{item.description}</p>
                 <span className="inline-block px-2 py-1 text-sm rounded-full bg-blue-100 text-blue-800">
                   {item.type === 'news' ? 'News' : 'Reports'}
                 </span>
@@ -138,9 +139,9 @@ const DairyNewsReports = () => {
               key={index}
               className="block"
             >
-              <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 bg-white">
+              <div className="card">
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-2">{item.description}</p>
+                <p className="text-gray-300 mb-2">{item.description}</p>
                 <span className="inline-block px-2 py-1 text-sm rounded-full bg-blue-100 text-blue-800">
                   {item.type === 'news' ? 'News' : 'Reports'}
                 </span>

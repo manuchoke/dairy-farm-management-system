@@ -131,17 +131,17 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900">
+        <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-6">
           Create your account
         </h2>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-white py-8 px-6 shadow-md rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Email Input */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-black">
                 Email address
               </label>
               <div className="mt-1">
@@ -160,7 +160,7 @@ const Register = () => {
 
             {/* Password Input */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-black">
                 Password
               </label>
               <div className="mt-1">
@@ -177,7 +177,7 @@ const Register = () => {
 
             {/* Confirm Password Input */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-black">
                 Confirm Password
               </label>
               <div className="mt-1">
@@ -194,7 +194,7 @@ const Register = () => {
 
             {/* First Name Input */}
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="firstName" className="block text-sm font-medium text-black">
                 First Name
               </label>
               <div className="mt-1">
@@ -212,7 +212,7 @@ const Register = () => {
 
             {/* Last Name Input */}
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="lastName" className="block text-sm font-medium text-black">
                 Last Name
               </label>
               <div className="mt-1">
@@ -230,7 +230,7 @@ const Register = () => {
 
             {/* Farm Name Input */}
             <div>
-              <label htmlFor="farmName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="farmName" className="block text-sm font-medium text-black">
                 Farm Name
               </label>
               <div className="mt-1">
@@ -248,7 +248,7 @@ const Register = () => {
 
             {/* Address Input */}
             <div>
-              <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="address" className="block text-sm font-medium text-black">
                 Farm Address
               </label>
               <div className="mt-1">
@@ -266,17 +266,17 @@ const Register = () => {
 
             {/* Farm Size Input */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Farm Size (acres)
-              </label>
+              <label className="block text-sm font-medium text-black">Farm Size (acres)</label>
               <input
                 type="number"
                 min="0"
                 step="0.01"
                 value={farmSize}
                 onChange={(e) => setFarmSize(e.target.value)}
-                className={`mt-1 block w-full rounded-md shadow-sm sm:text-sm
-                  ${formErrors.farmSize ? 'border-red-500' : 'border-gray-300'}`}
+                className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm ${
+                  formErrors.farmSize ? 'border-red-500' : 'border-gray-300'
+                }`}
+                placeholder="Enter farm size"
               />
               {formErrors.farmSize && (
                 <p className="mt-1 text-sm text-red-500">{formErrors.farmSize}</p>
@@ -285,17 +285,17 @@ const Register = () => {
 
             {/* Number of Cattle Input */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Number of Cattle
-              </label>
+              <label className="block text-sm font-medium text-black">Number of Cattle</label>
               <input
                 type="number"
                 min="0"
                 step="1"
                 value={numberOfCattle}
                 onChange={(e) => setNumberOfCattle(e.target.value)}
-                className={`mt-1 block w-full rounded-md shadow-sm sm:text-sm
-                  ${formErrors.numberOfCattle ? 'border-red-500' : 'border-gray-300'}`}
+                className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm ${
+                  formErrors.numberOfCattle ? 'border-red-500' : 'border-gray-300'
+                }`}
+                placeholder="Enter number of cattle"
               />
               {formErrors.numberOfCattle && (
                 <p className="mt-1 text-sm text-red-500">{formErrors.numberOfCattle}</p>

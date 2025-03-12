@@ -305,6 +305,7 @@ const MilkProduction = () => {
       <div className="icons">
         <button className="icon-button" onClick={() => setShowForm(true)}>
           <img src={milkCanIcon} alt="Add Milk Production" className="icon-image" />
+          <p className="text-sm">Add Milk Production</p>
         </button>
       </div>
 

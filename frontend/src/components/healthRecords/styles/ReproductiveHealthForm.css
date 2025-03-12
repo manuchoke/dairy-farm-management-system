@@ -28,12 +28,12 @@
   .form-container input[type="text"]:focus,
   .form-container input[type="date"]:focus {
     outline: none;
-    border-color: #5cb85c; /* Green border on focus */
+    border-color: #050505; /* Green border on focus */
   }
   
   .form-container input[type="text"]:hover,
   .form-container input[type="date"]:hover {
-    border-color: #5cb85c; /* Green border on hover */
+    border-color: #000000; /* Green border on hover */
   }
   
   .form-container textarea {
@@ -48,12 +48,12 @@
   
   .form-container textarea:focus {
     outline: none;
-    border-color: #5cb85c; /* Green border on focus */
+    border-color: #030303; /* Green border on focus */
   }
   
   .form-container button[type="submit"]
    {
-    background-color: #5cb85c; /* Green submit and cancel buttons */
+    background-color: #4178cc; /* Green submit and cancel buttons */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -64,7 +64,7 @@
   
   .form-container button[type="submit"]:hover
    {
-    background-color: #4cae4c; /* Darker green on hover */
+    background-color: #5c52e0; /* Darker green on hover */
   }
   
   .form-container button[type="button"] {

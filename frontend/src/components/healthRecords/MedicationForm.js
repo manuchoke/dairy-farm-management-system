@@ -194,7 +194,7 @@ const MedicationAdministrationForm = ({ onClose, onRecordAdded, initialData }) =
         <label>Notes:</label>
         <textarea name="notes" value={formData.notes} onChange={handleChange}></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className="submit-button">Submit</button>
       <button type="button" onClick={onClose}>Cancel</button>
     </form>
   );

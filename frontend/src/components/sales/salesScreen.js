@@ -136,21 +136,21 @@ const SalesScreen = () => {
 
   return (
     <div className="sales-screen p-4">
-      <h2 className="text-2xl font-bold mb-6">Sales Analytics</h2>
+      <h2 className="text-2xl font-bold mb-6" style={{ color: 'rgb(0, 0, 0)' }}>Sales Analytics</h2>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Milk Production Chart */}
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="chart-container">
           <h3 className="text-xl font-semibold mb-4">Milk Production Analysis</h3>
-          <div className="h-[400px]">
+          <div className="chart">
             <Line data={milkData} options={chartOptions} />
           </div>
         </div>
 
         {/* Feed Management Chart */}
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="chart-container">
           <h3 className="text-xl font-semibold mb-4">Feed Cost Analysis</h3>
-          <div className="h-[400px]">
+          <div className="chart">
             <Line data={feedData} options={chartOptions} />
           </div>
         </div>

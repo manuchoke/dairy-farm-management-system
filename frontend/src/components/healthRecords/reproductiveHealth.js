@@ -182,8 +182,8 @@ const ReproductiveHealthForm = ({ onClose, onRecordAdded, initialData }) => {
         <label>Post-Partum Health Status:</label>
         <textarea name="postPartumHealthStatus" value={formData.postPartumHealthStatus} onChange={handleChange}></textarea>
       </div>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={onClose}>Cancel</button>
+      <button type="submit" className="submit-button">Submit</button>
+      <button type="button" className="cancel-button" onClick={onClose}>Cancel</button>
     </form>
   );
 };

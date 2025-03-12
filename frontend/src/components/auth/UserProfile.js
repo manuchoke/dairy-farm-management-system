@@ -183,206 +183,204 @@ const UserProfile = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-          <div className="px-4 py-5 sm:px-6 flex justify-between items-center">
-            <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Farm Profile
-              </h3>
-              <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                Personal and farm details
-              </p>
-            </div>
-            <button
-              onClick={() => setIsEditing(!isEditing)}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
-            >
-              {isEditing ? 'View Profile' : 'Edit Profile'}
-            </button>
+      <div className="max-w-3xl mx-auto border border-gray-300 rounded-lg bg-white shadow-md p-6">
+        <div className="px-4 py-5 sm:px-6 flex justify-between items-center">
+          <div>
+            <h3 className="text-lg leading-6 font-medium text-black-900">
+              Farm Profile
+            </h3>
+            <p className="mt-1 max-w-2xl text-sm text-black-500">
+              Personal and farm details
+            </p>
           </div>
-
-          {isEditing ? (
-            <form onSubmit={handleSubmit} className="border-t border-gray-200 p-4">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">First Name</label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={userData.firstName || ''}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Last Name</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={userData.lastName || ''}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={userData.email || ''}
-                    disabled
-                    className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50 shadow-sm sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    value={userData.phoneNumber || ''}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Farm Name</label>
-                  <input
-                    type="text"
-                    name="farmName"
-                    value={userData.farmName || ''}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Address</label>
-                  <input
-                    type="text"
-                    name="address"
-                    value={userData.address || ''}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Farm Size (acres)</label>
-                  <input
-                    type="number"
-                    name="farmSize"
-                    value={userData.farmSize?.value || ''}
-                    onChange={(e) => {
-                      setUserData(prev => ({
-                        ...prev,
-                        farmSize: {
-                          ...prev.farmSize,
-                          value: e.target.value
-                        }
-                      }));
-                    }}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Number of Cattle</label>
-                  <input
-                    type="number"
-                    name="numberOfCattle"
-                    value={userData.numberOfCattle || ''}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-6 flex justify-end space-x-3">
-                <button
-                  type="button"
-                  onClick={() => setIsEditing(false)}
-                  className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:bg-indigo-400"
-                >
-                  {loading ? 'Saving...' : 'Save Changes'}
-                </button>
-              </div>
-            </form>
-          ) : (
-            <div className="border-t border-gray-200">
-              <dl>
-                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Full name</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {userData.firstName} {userData.lastName}
-                  </dd>
-                </div>
-
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Email address</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {userData.email}
-                  </dd>
-                </div>
-
-                {userData.phoneNumber && (
-                  <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="text-sm font-medium text-gray-500">Phone number</dt>
-                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                      {userData.phoneNumber}
-                    </dd>
-                  </div>
-                )}
-
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Farm name</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {userData.farmName}
-                  </dd>
-                </div>
-
-                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Farm address</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {userData.address}
-                  </dd>
-                </div>
-
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Farm size</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {userData.farmSize?.value || 0} {userData.farmSize?.unit || 'Acres'}
-                  </dd>
-                </div>
-
-                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Number of cattle</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {userData.numberOfCattle}
-                  </dd>
-                </div>
-
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Member since</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {new Date(userData.createdAt).toLocaleDateString()}
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          )}
+          <button
+            onClick={() => setIsEditing(!isEditing)}
+            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+          >
+            {isEditing ? 'View Profile' : 'Edit Profile'}
+          </button>
         </div>
+
+        {isEditing ? (
+          <form onSubmit={handleSubmit} className="border-t border-gray-200 p-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div>
+                <label className="block text-sm font-medium text-black-700">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={userData.firstName || ''}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black-700">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={userData.lastName || ''}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={userData.email || ''}
+                  disabled
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50 shadow-sm sm:text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black-700">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  value={userData.phoneNumber || ''}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black-700">Farm Name</label>
+                <input
+                  type="text"
+                  name="farmName"
+                  value={userData.farmName || ''}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black-700">Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={userData.address || ''}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black-700">Farm Size (acres)</label>
+                <input
+                  type="number"
+                  name="farmSize"
+                  value={userData.farmSize?.value || ''}
+                  onChange={(e) => {
+                    setUserData(prev => ({
+                      ...prev,
+                      farmSize: {
+                        ...prev.farmSize,
+                        value: e.target.value
+                      }
+                    }));
+                  }}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+
+              <div>
+                  <label className="block text-sm font-medium text-black-700">Number of Cattle</label>
+                <input
+                  type="number"
+                  name="numberOfCattle"
+                  value={userData.numberOfCattle || ''}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-end space-x-3">
+              <button
+                type="button"
+                onClick={() => setIsEditing(false)}
+                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-red-600 hover:bg-red-700"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:bg-indigo-400"
+              >
+                {loading ? 'Saving...' : 'Save Changes'}
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div className="border-t border-gray-200">
+            <dl>
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Full name</dt>
+                <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {userData.firstName} {userData.lastName}
+                </dd>
+              </div>
+
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Email address</dt>
+                <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {userData.email}
+                </dd>
+              </div>
+
+              {userData.phoneNumber && (
+                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-medium text-black-500">Phone number</dt>
+                  <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                    {userData.phoneNumber}
+                  </dd>
+                </div>
+              )}
+
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Farm name</dt>
+                <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {userData.farmName}
+                </dd>
+              </div>
+
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Farm address</dt>
+                  <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {userData.address}
+                </dd>
+              </div>
+
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Farm size</dt>
+                  <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {userData.farmSize?.value || 0} {userData.farmSize?.unit || 'Acres'}
+                </dd>
+              </div>
+
+              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Number of cattle</dt>
+                <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {userData.numberOfCattle}
+                </dd>
+              </div>
+
+              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-black-500">Member since</dt>
+                <dd className="mt-1 text-sm text-black-900 sm:mt-0 sm:col-span-2">
+                  {new Date(userData.createdAt).toLocaleDateString()}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        )}
       </div>
 
       <div className="mt-6 flex justify-center">
