@@ -161,7 +161,7 @@ const HealthRecordsScreen = () => {
 
   return (
     <div className="health-records-screen">
-      <h4>Health Records</h4>
+      <h1 className="text-2xl font-bold bg-blue-500 p-4 rounded text-white mb-12 text-center">Health Records</h1>
       
 
       {/* Buttons to open forms */}

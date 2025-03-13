@@ -14,7 +14,6 @@ import FeedManagement from './components/FeedManagement';
 import MilkProduction from './components/milkProduction/milkProduction';
 import HealthRecordsScreen from './components/healthRecords/healthRecordsScreen';
 import SalesScreen from './components/sales/salesScreen';
-import DairyChatAI from './components/chat/DairyChatAI';
 import DairyNewsReports from './components/dairyNews/DairyNewsReports';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
@@ -23,6 +22,7 @@ import UserProfile from './components/auth/UserProfile';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import VerifyOTP from './components/auth/VerifyOTP';
+import GeminiAI from './components/chat/GeminiAI';
 
 // Public route wrapper
 const PublicRoute = ({ children }) => {
@@ -84,9 +84,9 @@ const App = () => {
               <Route path="/feed-management" element={<FeedManagement />} />
               <Route path="/health-records" element={<HealthRecordsScreen />} />
               <Route path="/sales" element={<SalesScreen />} />
-              <Route path="/dairy-chat" element={<DairyChatAI />} />
               <Route path="/dairy-news-reports" element={<DairyNewsReports />} />
               <Route path="/profile" element={<UserProfile />} />
+              <Route path="/gemini" element={<GeminiAI />} />
             </Route>
           </Routes>
         </Router>

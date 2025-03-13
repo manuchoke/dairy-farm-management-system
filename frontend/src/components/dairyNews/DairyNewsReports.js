@@ -2,7 +2,9 @@ import React from 'react';
 import './styles/DairyNewsReports.css';
 
 const DairyNewsReports = () => {
+
   const newsAndReports = {
+
     kenyanSources: [
       {
         title: "Kenya Dairy Board",
@@ -101,7 +103,7 @@ const DairyNewsReports = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Dairy News and Reports</h1>
+      <h1 className="text-3xl font-bold mb-8 bg-blue-500 text-white-800 p-4 rounded-lg text-center">Dairy News and Reports</h1>
       
       {/* Kenyan Sources */}
       <div className="mb-8">

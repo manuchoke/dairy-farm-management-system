@@ -50,37 +50,37 @@ const AddAnimalModal  = ({ fetchAnimals }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
       <div className="mb-2">
-        <label className="block text-gray-700 font-bold mb-1">Tag ID:</label>
+        <label className="block text-gray-700 font-bold mb-1 text-sm">Tag ID:</label>
         <input
           type="text"
           name="tagId"
           value={formData.tagId}
           onChange={handleChange}
-          className="w-full border rounded px-3 py-2 bg-white"
+          className="w-full border rounded px-2 py-1 bg-white text-sm"
           required
         />
       </div>
 
       <div className="mb-2">
-        <label className="block text-gray-700 font-bold mb-1">Breed:</label>
+        <label className="block text-gray-700 font-bold mb-1 text-sm">Breed:</label>
         <input
           type="text"
           name="breed"
           value={formData.breed}
           onChange={handleChange}
-          className="w-full border rounded px-3 py-2 bg-white"
+          className="w-full border rounded px-2 py-1 bg-white text-sm"
           required
         />
       </div>
 
       <div className="mb-2">
-        <label className="block text-gray-700 font-bold mb-1">Image:</label>
-        <input type="file" name="image" onChange={handleImageChange} accept="image/*" />
+        <label className="block text-gray-700 font-bold mb-1 text-sm">Image:</label>
+        <input type="file" name="image" onChange={handleImageChange} accept="image/*" className="text-sm" />
       </div>
 
-      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded text-sm">
         Add Animal
       </button>
     </form>

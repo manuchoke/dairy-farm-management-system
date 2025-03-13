@@ -299,13 +299,13 @@ const FeedManagement = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Feed Management</h2>
+      <h1 className="text-2xl font-bold bg-blue-500 p-4 rounded text-white mb-12">Feed Management</h1>
 
       {/* Summary Section */}
       <div className="mb-4 p-3 border bg-gray-100 rounded">
         <p className="text-lg font-semibold">Total Feeds: {totalFeeds}</p>
         <p className="text-lg font-semibold">Total Quantity: {totalQuantity} Units</p>
-        <p className="text-lg font-semibold">Total Cost: ${totalCost.toFixed(2)}</p>
+        <p className="text-lg font-semibold">Total Cost: Ksh.{totalCost.toFixed(2)}</p>
       </div>
 
       {/* Add Feed Button */}
@@ -345,7 +345,7 @@ const FeedManagement = () => {
             <input
               type="text"
               name="unit"
-              placeholder="Unit (kg, bags, etc.)"
+              placeholder="Unit (kgs)"
               value={formData.unit}
               onChange={handleChange}
               className="border p-2 rounded"
@@ -398,6 +398,7 @@ const FeedManagement = () => {
           className="border p-2 rounded"
         />
       </div>
+      <h2 className="text-xl font-bold bg-blue-500 p-4 rounded text-white mb-12 text-center">Feed Records</h2>
 
       {/* Daily Records */}
       <div className="mb-8">
@@ -408,7 +409,7 @@ const FeedManagement = () => {
               <th className="border p-2">Date</th>
             <th className="border p-2">Name</th>
             <th className="border p-2">Quantity</th>
-            <th className="border p-2">Unit</th>
+            <th className="border p-2">Unit(kgs) </th>
             <th className="border p-2">Cost</th>
             <th className="border p-2">Actions</th>
           </tr>
@@ -423,7 +424,7 @@ const FeedManagement = () => {
                 <td className="border p-2">{feed.name}</td>
                 <td className="border p-2">{feed.quantity}</td>
                 <td className="border p-2">{feed.unit}</td>
-                  <td className="border p-2">${Number(feed.cost).toFixed(2)}</td>
+                  <td className="border p-2">Ksh.{Number(feed.cost).toFixed(2)}</td>
                 <td className="border p-2">
                     <div className="flex gap-2">
                       <button
@@ -458,7 +459,7 @@ const FeedManagement = () => {
           <thead>
             <tr className="bg-gray-100">
               <th className="border p-2">Week</th>
-              <th className="border p-2">Total Quantity</th>
+              <th className="border p-2">Total Quantity(kgs)</th>
               <th className="border p-2">Total Cost</th>
             </tr>
           </thead>
@@ -468,7 +469,7 @@ const FeedManagement = () => {
                 <tr key={record.period}>
                   <td className="border p-2">{record.period}</td>
                   <td className="border p-2">{record.totalQuantity.toFixed(2)}</td>
-                  <td className="border p-2">${record.totalCost.toFixed(2)}</td>
+                    <td className="border p-2">Ksh.{record.totalCost.toFixed(2)}</td>
                 </tr>
               ))
             ) : (
@@ -487,7 +488,7 @@ const FeedManagement = () => {
           <thead>
             <tr className="bg-gray-100">
               <th className="border p-2">Month</th>
-              <th className="border p-2">Total Quantity</th>
+              <th className="border p-2">Total Quantity(kgs) </th>
               <th className="border p-2">Total Cost</th>
             </tr>
           </thead>
@@ -497,7 +498,7 @@ const FeedManagement = () => {
                 <tr key={record.period}>
                   <td className="border p-2">{record.period}</td>
                   <td className="border p-2">{record.totalQuantity.toFixed(2)}</td>
-                  <td className="border p-2">${record.totalCost.toFixed(2)}</td>
+                  <td className="border p-2">Ksh.{record.totalCost.toFixed(2)}</td>
                 </tr>
               ))
             ) : (
@@ -516,7 +517,7 @@ const FeedManagement = () => {
           <thead>
             <tr className="bg-gray-100">
               <th className="border p-2">Year</th>
-              <th className="border p-2">Total Quantity</th>
+              <th className="border p-2">Total Quantity(kgs)</th>
               <th className="border p-2">Total Cost</th>
             </tr>
           </thead>
@@ -526,7 +527,7 @@ const FeedManagement = () => {
                 <tr key={record.period}>
                   <td className="border p-2">{record.period}</td>
                   <td className="border p-2">{record.totalQuantity.toFixed(2)}</td>
-                  <td className="border p-2">${record.totalCost.toFixed(2)}</td>
+                  <td className="border p-2">Ksh.{record.totalCost.toFixed(2)}</td>
                 </tr>
               ))
             ) : (

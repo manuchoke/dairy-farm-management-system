@@ -167,15 +167,18 @@ th {
 
 tr:last-child td {
   border-bottom: 3px solid #2196F3;
-  font-weight: 600;
-  background-color: #3b3b3b;
-  color: #e0e0e0;
+  font-weight: 400;
+  background-color: #2d2d2d;
+  color: #2196F3;
 }
 
 tr:hover {
   background-color: #3b3b3b;
 }
 
+tr:hover:last-child td {
+  background-color:#3b3b3b;
+}
 tr:hover td {
   color: #64B5F6;
 }

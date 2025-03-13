@@ -166,18 +166,4 @@
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
   background: #4e68df;
-}
-
-/* Loading animation */
-.loading-dots:after {
-  content: '.';
-  animation: dots 1.5s steps(5, end) infinite;
-}
-
-@keyframes dots {
-  0%, 20% { content: '.'; }
-  40% { content: '..'; }
-  60% { content: '...'; }
-  80% { content: '....'; }
-  100% { content: '.....'; }
 } 

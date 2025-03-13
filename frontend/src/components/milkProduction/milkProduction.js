@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { BASE_URL } from "../../config/urlConfig";
 import MilkProductionForm from './milkProductionForm';
-import milkCanIcon from '../images/milkCan.png';
 import './milkProductionScreen.css';
 
 const MilkProduction = () => {
@@ -302,10 +301,13 @@ const MilkProduction = () => {
 
   return (
     <div className="milk-production-container">
-      <div className="icons">
-        <button className="icon-button" onClick={() => setShowForm(true)}>
-          <img src={milkCanIcon} alt="Add Milk Production" className="icon-image" />
-          <p className="text-sm">Add Milk Production</p>
+      <h1 className="text-2xl font-bold bg-blue-500 p-4 rounded text-white mb-12 text-center">Milk Production</h1>
+      <div className="icons flex justify-center">
+        <button 
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded flex items-center gap-2"
+          onClick={() => setShowForm(true)}
+        >
+          <span>+ Add Milk Production Record</span>
         </button>
       </div>
 
@@ -333,7 +335,7 @@ const MilkProduction = () => {
         </div>
 
         <div className="summary-stats">
-          <h2>Total Milk Production: {grandTotal.toFixed(2)} liters</h2>
+          <h2 className="text-xl font-bold bg-blue-500 p-4 rounded text-white mb-12 text-center">Total Milk Production: {grandTotal.toFixed(2)} liters</h2>
         </div>
 
         <div className="records-tabs">

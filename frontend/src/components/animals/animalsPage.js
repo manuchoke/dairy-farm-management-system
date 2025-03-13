@@ -23,7 +23,8 @@ const AnimalsPage = () => {
 
   return (
     <div className="p-6">
-      <div className="mb-8">
+      <h1 className="text-2xl font-bold bg-blue-500 p-4 rounded text-white mb-12 text-center">Animal List</h1>
+      <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold text-white mb-6">Animal List</h2>
         <div className="bg-[#2d2d2d] p-6 rounded-lg shadow-md text-white">
           <AddAnimalModal fetchAnimals={fetchAnimals} />

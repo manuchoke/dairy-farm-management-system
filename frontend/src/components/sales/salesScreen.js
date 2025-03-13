@@ -104,7 +104,7 @@ const SalesScreen = () => {
     return {
       labels: sortedDates,
       datasets: [{
-        label: 'Daily Feed Cost ($)',
+        label: 'Daily Feed Cost (Ksh.)',
         data: sortedDates.map(date => groupedData[date]),
         borderColor: 'rgb(255, 99, 132)',
         tension: 0.1
@@ -136,7 +136,7 @@ const SalesScreen = () => {
 
   return (
     <div className="sales-screen p-4">
-      <h2 className="text-2xl font-bold mb-6" style={{ color: 'rgb(0, 0, 0)' }}>Sales Analytics</h2>
+      <h1 className="text-2xl font-bold bg-blue-500 p-4 rounded text-white mb-12">Sales Analytics</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Milk Production Chart */}

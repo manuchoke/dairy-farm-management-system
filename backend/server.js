@@ -11,7 +11,7 @@ const reproductiveHealthRoutes = require('./routes/reproductiveHealthRoutes');
 const vaccinationRoutes = require('./routes/vaccinationRoutes');
 const healthCheckRoutes = require('./routes/healthCheckRoutes');
 const authRoutes = require('./routes/authRoutes'); 
-const dairyChatRoutes = require('./routes/dairyChatRoutes');
+const geminiRoutes = require('./routes/geminiRoutes');
 
 // Create express app
 const app = express();
@@ -62,7 +62,7 @@ app.use('/api/reproductiveHealth', reproductiveHealthRoutes);
 app.use('/api/vaccinations', vaccinationRoutes);
 app.use('/api/healthChecks', healthCheckRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api', dairyChatRoutes);
+app.use('/api/gemini', geminiRoutes);
 
 // Routes
 app.get("/", (req, res) => {

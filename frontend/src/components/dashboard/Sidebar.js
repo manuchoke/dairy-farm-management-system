@@ -60,7 +60,7 @@ const Sidebar = () => {
         </li>
         <li className="my-4">
           <NavLink
-            to="/dairy-chat"
+            to="/gemini"
             className={({ isActive }) => isActive ? "active-link" : ""}
           >
             Dairy Chat AI
