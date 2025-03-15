@@ -304,7 +304,7 @@ const FeedManagement = () => {
       {/* Summary Section */}
       <div className="mb-4 p-3 border bg-gray-100 rounded">
         <p className="text-lg font-semibold">Total Feeds: {totalFeeds}</p>
-        <p className="text-lg font-semibold">Total Quantity: {totalQuantity} Units</p>
+        <p className="text-lg font-semibold">Total Quantity: {totalQuantity} kgs</p>
         <p className="text-lg font-semibold">Total Cost: Ksh.{totalCost.toFixed(2)}</p>
       </div>
 
